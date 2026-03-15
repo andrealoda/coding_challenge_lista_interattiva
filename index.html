@@ -6,32 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Italianno&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <header class="header">
-        <div class="container">
-
-        </div>
-        <!-- /.container -->
-    </header>
-    <!-- /.header -->
 
     <main class="main">
         <div class="container">
-
+            <div class="card">
+                <div class="card-title">
+                    <h2>TASK MANAGER</h2>
+                </div>
+                <!-- /.card-title -->
+                <div class="card-main">
+                    <h3 class="label">
+                        Inserisci la tua attività.
+                    </h3>
+                    <!-- /.label -->
+                    <p class="input">
+                        🔍 <input type="text" name="task" id="task">
+                    </p>
+                    <!-- /.input -->
+                    <button type="button" id="btn">Aggiungi al task manager</button>
+                    <!-- /#btn -->
+                    <h4 class="error">Non puoi aggiungere un&apos;attività vuota.</h4>
+                    <!-- /.error -->
+                    <div class="task-box">
+                        <ul class="task-list" id="task-list">
+                            <li><input type="checkbox" name="single-task" id="single-task"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus dolorem rem a ea nam quasi sapiente dolor illum ad, dicta dolorum velit saepe unde aliquid corporis, iste necessitatibus similique quo.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /.card-main -->
+            </div>
+            <!-- /.card -->
         </div>
         <!-- /.container -->
     </main>
     <!-- /.main -->
-
-    <footer class="footer">
-        <div class="container">
-
-        </div>
-        <!-- /.container -->
-    </footer>
-    <!-- /.footer -->
 
     <script src="main.js"></script>
 </body>

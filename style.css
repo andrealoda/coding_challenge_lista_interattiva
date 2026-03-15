@@ -1,5 +1,103 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+:root {
+    --gray-light: #E0E0E0;
+    --brown-dark: #4F4946;
+    --orange-soft: #F7885A;
+    --orange-strong: #F65314;
+}
+
+body {}
+
+
+/* #region main */
+
+.main .container {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    font-family: 'Space Mono';
+    position: absolute;
+    top: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url(169.jpg);
+    background-size: cover;
+}
+
+.card {
+    margin: 2rem;
+    width: 400px;
+    min-height: 600px;
+    border-radius: 2rem;
+    box-shadow: 2px 4px 10px;
+    background-color: var(--gray-light);
+    text-align: center;
+}
+
+.card-title {
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 5px;
+    height: 60px;
+    padding: 1rem;
+    background-color: var(--brown-dark);
+    color: var(--gray-light);
+    border-bottom: 3px solid var(--orange-soft);
+    border-radius: 2rem;
+}
+
+.card-main {
+    position: relative;
+
+}
+
+.label {
+    font-weight: 300;
+    text-align: center;
+    margin-top: 3rem;
+
+}
+
+.input {
+    padding: 2rem;
+    text-align: center;
+}
+
+#btn {
+    border: 2px solid var(--orange-soft);
+    border-radius: 2rem;
+    background: none;
+    padding: 0.5rem;
+    font-family: 'Space Mono';
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--orange-strong);
+    }
+
+}
+
+.error {
+    padding: 2rem;
+    font-size: small;
+    color: var(--orange-strong);
+    display: none;
+}
+
+.task-box {
+    margin: 3rem 2rem 3rem 2rem;
+    padding: 2rem;
+    position: absolute;
+    top: 65%;
+    text-align: justify;
+    font-size: smaller;
+    te
+}
+
+/* #endregion */
