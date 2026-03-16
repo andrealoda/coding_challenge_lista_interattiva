@@ -1,10 +1,14 @@
+
+
 function taskAdder() {
     const addTask = document.createElement('li');
 
     const taskList = document.getElementById('task-list');
 
     const taskInput = document.getElementById('task').value;
+
     const taskText = document.createTextNode(taskInput);
+
     const errorDisplay = document.querySelector('.error');
 
     if (taskInput === '') {

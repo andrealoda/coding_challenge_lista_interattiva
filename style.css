@@ -11,7 +11,7 @@
     --orange-strong: #F65314;
 }
 
-.main .container {
+.container {
     display: flex;
     justify-content: center;
     font-family: 'Space Mono';
