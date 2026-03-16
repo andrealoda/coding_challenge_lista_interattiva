@@ -6,9 +6,9 @@ function taskAdder() {
     const taskInput = document.getElementById('task').value;
     const taskText = document.createTextNode(taskInput);
     const errorDisplay = document.querySelector('.error');
-    errorDisplay.innerHTML = 'Non puoi aggiungere un&apos;attività vuota.';
 
     if (taskInput === '') {
+        errorDisplay.innerHTML = 'Non puoi aggiungere un&apos;attività vuota.';
         errorDisplay.style.display = 'block'
     } else {
         addTask.appendChild(taskText);
