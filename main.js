@@ -1,13 +1,3 @@
-// document.getElementById('btn').addEventListener('click',
-//     function() {
-//         console.log('click');
-//     }
-// );
-
-
-
-
-
 function taskAdder() {
     const addTask = document.createElement('li');
 
@@ -16,21 +6,14 @@ function taskAdder() {
     const taskInput = document.getElementById('task').value;
     const taskText = document.createTextNode(taskInput);
     const errorDisplay = document.querySelector('.error');
-
-    // addTask.appendChild(taskText);
-
-    // taskList.appendChild(addTask);
+    errorDisplay.innerHTML = 'Non puoi aggiungere un&apos;attività vuota.';
 
     if (taskInput === '') {
         errorDisplay.style.display = 'block'
-
     } else {
         addTask.appendChild(taskText);
-
         taskList.appendChild(addTask);
         errorDisplay.style.display = 'none'
-
     }
-
 }
 
