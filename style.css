@@ -11,23 +11,13 @@
     --orange-strong: #F65314;
 }
 
-body {}
 
 
-/* #region main */
 
 .main .container {
-    width: 80%;
-    height: 80%;
     display: flex;
     justify-content: center;
     font-family: 'Space Mono';
-    position: absolute;
-    top: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background-image: url(169.jpg);
-    background-size: cover;
 }
 
 .card {
@@ -53,7 +43,7 @@ body {}
 }
 
 .card-main {
-    position: relative;
+    min-height: 500px;
 
 }
 
@@ -73,7 +63,7 @@ body {}
     border: 2px solid var(--orange-soft);
     border-radius: 2rem;
     background: none;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     font-family: 'Space Mono';
     cursor: pointer;
 
@@ -91,13 +81,10 @@ body {}
 }
 
 .task-box {
-    margin: 3rem 2rem 3rem 2rem;
+    margin: 1rem 2rem;
     padding: 2rem;
-    position: absolute;
-    top: 65%;
     text-align: justify;
     font-size: smaller;
-    te
+    /* border: 1px solid red; */
 }
 
-/* #endregion */
