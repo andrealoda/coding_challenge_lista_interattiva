@@ -1,24 +1,33 @@
-
-
 function taskAdder() {
     const addTask = document.createElement('li');
 
-    const taskList = document.getElementById('task-list');
-
+    const checkBox = document.createElement('div');
+    checkBox.innerHTML = '<i class="bi bi-square"></i>';
+    checkBox.addEventListener('click', checkBoxSelection);
+    function checkBoxSelection () {
+        if (checkBox.innerHTML === '<i class="bi bi-square"></i>') {
+        checkBox.innerHTML = '<i class="bi bi-check-square-fill"></i>';
+        divLi.classList.add('line-through');}
+        else {
+                checkBox.innerHTML = '<i class="bi bi-square"></i>';
+                divLi.classList.remove('line-through')
+        }
+    };
+    
     const taskInput = document.getElementById('task').value;
     document.getElementById('task').value = '';
-
-    // const taskText = document.createTextNode(taskInput);
-
-    const errorDisplay = document.querySelector('.error');
-    
     const divLi = document.createElement('div');
     divLi.classList.add('task-row');
-    divLi.innerHTML = `
-        <i class="bi bi-square"></i>
-        <i class="bi bi-check-square-fill"></i>
-        <span>${taskInput}</span>
-        <i class="bi bi-trash"></i>`;
+    divLi.innerHTML = taskInput;
+
+    const trashIcon = document.createElement('div');
+    trashIcon.innerHTML = '<i class="bi bi-trash"></i>';
+    trashIcon.addEventListener('click', deleteFunction);
+    function deleteFunction () {divLi.remove()};
+
+    const taskList = document.getElementById('task-list');
+
+    const errorDisplay = document.querySelector('.error');
 
     if (taskInput === '') {
         errorDisplay.innerHTML = 'Non puoi aggiungere un&apos;attività vuota.';
@@ -26,8 +35,9 @@ function taskAdder() {
     } else {
         addTask.appendChild(divLi);
         taskList.appendChild(addTask);
+        divLi.appendChild(trashIcon);
+        divLi.appendChild(checkBox);
         errorDisplay.style.display = 'none'
-
-
     }
+
 }
