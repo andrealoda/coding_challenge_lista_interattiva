@@ -18,7 +18,7 @@ function taskAdder() {
     document.getElementById('task').value = '';
     const divLi = document.createElement('div');
     divLi.classList.add('task-row');
-    divLi.innerHTML = taskInput;
+    divLi.innerHTML = `&nbsp; ${taskInput} &nbsp;`;
 
     const trashIcon = document.createElement('div');
     trashIcon.innerHTML = '<i class="bi bi-trash"></i>';
@@ -35,8 +35,8 @@ function taskAdder() {
     } else {
         addTask.appendChild(divLi);
         taskList.appendChild(addTask);
-        divLi.appendChild(trashIcon);
         divLi.appendChild(checkBox);
+        divLi.appendChild(trashIcon);
         errorDisplay.style.display = 'none'
     }
 
