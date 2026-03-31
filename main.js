@@ -37,7 +37,7 @@ function addTask() {
         }
     });
 
-
+    // --- empty input
     const errorDisplay = document.querySelector('.error');
 
     if (taskInput === '') {

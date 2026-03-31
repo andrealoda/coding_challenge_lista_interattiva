@@ -56,7 +56,7 @@
     text-align: center;
 }
 
-#btn {
+#task-btn {
     border: 2px solid var(--orange-soft);
     border-radius: 2rem;
     background: none;
@@ -89,15 +89,19 @@
 .task-row {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 1rem;
 
 }
 
 .task-text {
     flex-grow: 1;
-
+    align-items: flex-start;
+    min-width: 0;
+    overflow-wrap: break-word;
 }
 
-.bi-square, .bi-check-square-fill {
+.bi-square,
+.bi-check-square-fill {
     cursor: pointer;
     margin-right: 4px;
 }
@@ -105,7 +109,7 @@
 .bi-trash {
     margin-left: auto;
     cursor: pointer;
-    
+
 }
 
 .line-through {
