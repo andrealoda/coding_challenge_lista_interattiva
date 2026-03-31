@@ -1,38 +1,42 @@
+const taskBtn = document.getElementById('task-btn');
+taskBtn.addEventListener('click', addTask);
 
-const btn = document.getElementById('btn');
+function addTask() {
+    const taskInput = document.getElementById('task-input').value;
+    const taskBox = document.querySelector('.task-box');
 
-btn.addEventListener('click', taskAdder);
+    // --- nodi
+    const taskRow = document.createElement('div');
+    taskRow.classList.add('task-row');
+    const taskCheck = document.createElement('div');
+    taskCheck.classList.add('task-check');
+    const taskText = document.createElement('div');
+    taskText.classList.add('task-text');
+    const taskTrash = document.createElement('div');
+    taskTrash.classList.add('task-trash');
 
-function taskAdder() {
-    const addTask = document.createElement('li');
+    // --- contenuto
+    taskCheck.innerHTML = '<i class="bi bi-square"></i>';
+    taskText.innerHTML = `&nbsp; ${taskInput} &nbsp;`;
+    taskTrash.innerHTML = '<i class="bi bi-trash"></i>';
 
-    const checkBox = document.createElement('div');
+    // trash a task
+    taskTrash.addEventListener('click', deleteFunction);
+    function deleteFunction() { taskRow.remove() };
 
-    checkBox.innerHTML = '<i class="bi bi-square"></i>';
 
-    checkBox.addEventListener('click', () => {
-        if (checkBox.innerHTML === '<i class="bi bi-square"></i>') {
-            checkBox.innerHTML = '<i class="bi bi-check-square-fill"></i>';
-            divLi.classList.add('line-through');
+    // --- toggle check
+    taskCheck.addEventListener('click', () => {
+        if (taskCheck.innerHTML === '<i class="bi bi-square"></i>') {
+            taskCheck.innerHTML = '<i class="bi bi-check-square-fill"></i>';
+            taskText.classList.add('line-through');
         }
         else {
-            checkBox.innerHTML = '<i class="bi bi-square"></i>';
-            divLi.classList.remove('line-through')
+            taskCheck.innerHTML = '<i class="bi bi-square"></i>';
+            taskText.classList.remove('line-through');
         }
     });
 
-    const taskInput = document.getElementById('task').value;
-    document.getElementById('task').value = '';
-    const divLi = document.createElement('div');
-    divLi.classList.add('task-row');
-    divLi.innerHTML = `&nbsp; ${taskInput} &nbsp;`;
-
-    const trashIcon = document.createElement('div');
-    trashIcon.innerHTML = '<i class="bi bi-trash"></i>';
-    trashIcon.addEventListener('click', deleteFunction);
-    function deleteFunction() { divLi.remove() };
-
-    const taskList = document.getElementById('task-list');
 
     const errorDisplay = document.querySelector('.error');
 
@@ -40,11 +44,10 @@ function taskAdder() {
         errorDisplay.innerHTML = 'Non puoi aggiungere un&apos;attività vuota.';
         errorDisplay.style.display = 'block'
     } else {
-        addTask.appendChild(divLi);
-        taskList.appendChild(addTask);
-        divLi.appendChild(checkBox);
-        divLi.appendChild(trashIcon);
-        errorDisplay.style.display = 'none'
+        taskRow.append(taskCheck, taskText, taskTrash);
+        taskBox.appendChild(taskRow);
+        errorDisplay.style.display = 'none';
     }
 
-};
+}
+
