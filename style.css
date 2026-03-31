@@ -104,13 +104,18 @@
 .bi-check-square-fill {
     cursor: pointer;
     margin-right: 4px;
+
+    &:hover {
+        color: var(--orange-strong)
+    }
 }
 
 .bi-trash {
     margin-left: auto;
     cursor: pointer;
+
     &:hover {
-        color: red;
+        color: var(--orange-strong)
     }
 }
 
