@@ -51,3 +51,17 @@ function addTask() {
 
 }
 
+/* PROSSIMI PASSI:
+
+suddividere la funzione in:
+ funzione che appende i nodi (aggiunge la task)
+ funzione che gestisce l'errore input vuoto
+ funzione che gestisce il line-through
+ funzione che cancella la riga
+
+
+
+ aggiungere la possibilità di modificare una task già in elenco
+ salvare le task
+ 
+ */

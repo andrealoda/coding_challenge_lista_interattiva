@@ -109,7 +109,9 @@
 .bi-trash {
     margin-left: auto;
     cursor: pointer;
-
+    &:hover {
+        color: red;
+    }
 }
 
 .line-through {
